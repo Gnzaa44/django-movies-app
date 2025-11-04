@@ -34,7 +34,7 @@ class Movie(models.Model):
 
 Instalación y Ejecución en Local
 1️⃣ Clonar el repositorio
-git clone https://github.com/Gnzaa44/alquila-seguro-app-backend.git
+git clone https://github.com/Gnzaa44/django-movies-app.git
 cd PyMovies
 2️⃣ Crear y activar entorno virtual
 python -m venv .venv
