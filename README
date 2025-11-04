@@ -89,6 +89,6 @@ Cada una con título, descripción, género, año y poster_url desde TMDb.
 📎 Notas Finales
 
 ✔ El campo poster_url permite mostrar imágenes sin guardar archivos en el servidor.
-✔ El campo image existe en el modelo pero no es necesario para producción.
+✔ El campo image existe en el modelo, donde se puede agregar una imagen desde nuestra PC, pero no es necesario para producción.
 ✔ Proyecto desarrollado en entorno local con PostgreSQL + Django 5.
 ✔ Puede desplegarse en Render / Railway en el futuro sin grandes cambios.
