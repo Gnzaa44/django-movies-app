@@ -1,0 +1,94 @@
+🎬 PyMovies - Catálogo de Películas con Django
+
+Autor: Gonzalo Seitz
+Tecnologías: Django · PostgreSQL · Bootstrap · CRUD · Fixtures
+
+Descripción del Proyecto
+
+PyMovies es una aplicación web desarrollada con Django que permite gestionar un catálogo de películas.
+Incluye autenticación, vistas dinámicas, CRUD completo y carga de datos mediante fixtures o desde el panel de administración.
+
+Funcionalidades Principales
+
+✔ Catálogo público de películas
+✔ Login y logout de usuarios
+✔ Panel para agregar, editar, eliminar películas (solo admin)
+✔ Postgres como base de datos
+✔ Carga inicial de datos con fixtures
+✔ Bootstrap y templates propios (base.html y extendidos)
+✔ Campos de imagen desde URL o archivo local (poster_url / image)
+
+Modelo de Datos (Movie)
+from django.db import models
+
+class Movie(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    genre = models.CharField(max_length=50)
+    year = models.PositiveIntegerField()
+    image = models.ImageField(upload_to='movies/', blank=True, null=True)  # Se ignora en producción
+    poster_url = models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+Instalación y Ejecución en Local
+1️⃣ Clonar el repositorio
+git clone https://github.com/Gnzaa44/alquila-seguro-app-backend.git
+cd PyMovies
+2️⃣ Crear y activar entorno virtual
+python -m venv .venv
+source .venv/bin/activate      # Linux/Mac
+.venv\Scripts\activate         # Windows
+
+3️⃣ Instalar dependencias
+pip install -r requirements.txt
+
+4️⃣ Configurar el archivo .env
+
+El archivo .env debe contener algo como:
+
+SECRET_KEY=clave_secreta
+DEBUG=True
+DATABASE_URL=postgres://usuario:password@localhost:5432/py_movies_db
+
+5️⃣ Aplicar migraciones
+python manage.py migrate
+
+6️⃣ Cargar datos de ejemplo (fixture)
+python manage.py loaddata movies/fixtures/movies.json
+
+7️⃣ Crear superusuario
+python manage.py createsuperuser
+
+8️⃣ Ejecutar servidor
+python manage.py runserver
+
+
+Acceder desde:
+🔹 http://127.0.0.1:8000/ → Catálogo
+
+📁 Datos cargados (fixtures)
+
+El proyecto incluye un fixture con 6 películas de ejemplo:
+
+Blade Runner 2049
+
+Drive (2011)
+
+Diario de una Pasión
+
+Transformers
+
+Cars
+
+Ratatouille
+
+Cada una con título, descripción, género, año y poster_url desde TMDb.
+
+📎 Notas Finales
+
+✔ El campo poster_url permite mostrar imágenes sin guardar archivos en el servidor.
+✔ El campo image existe en el modelo pero no es necesario para producción.
+✔ Proyecto desarrollado en entorno local con PostgreSQL + Django 5.
+✔ Puede desplegarse en Render / Railway en el futuro sin grandes cambios.

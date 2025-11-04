@@ -1,0 +1,74 @@
+[
+  {
+    "model": "movies.movie",
+    "pk": 1,
+    "fields": {
+      "title": "Blade Runner 2049",
+      "description": "En un futuro distópico en 2049, el blade runner K descubre un secreto olvidado que podría sumir lo que queda de la sociedad en el caos. Su investigación lo lleva a Rick Deckard, un antiguo blade runner desaparecido durante treinta años.",
+      "genre": "Ciencia ficción",
+      "year": 2017,
+      "image": null,
+      "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg"
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 2,
+    "fields": {
+      "title": "Drive",
+      "description": "Un conductor para huidas y doble de escenas trabaja bajo reglas estrictas: no involucrarse emocionalmente. Pero cuando entabla amistad con su vecina Irene y su hijo Benicio, un golpe criminal pone a prueba su lealtad y su vida.",
+      "genre": "Thriller",
+      "year": 2011,
+      "image": null,
+      "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/cVWSBuCb7rzcHCRtXRlcH4XLHdX.jpg"
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 3,
+    "fields": {
+      "title": "Diario de una Pasión",
+      "description": "Noah y Allie viven un verano inolvidable en los años 40, separados por diferencias sociales y el tiempo. Décadas después, un hombre mayor lee un diario para revivir la historia de amor que cambió sus vidas.",
+      "genre": "Romance",
+      "year": 2004,
+      "image": null,
+      "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gFCnDKfsZWzyv9sweizVC4EWn06.jpg"
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 4,
+    "fields": {
+      "title": "Transformers",
+      "description": "Una antigua guerra entre los Autobots y los Decepticons llega a la Tierra con la Chispa Suprema, un artefacto con el poder de dar vida a máquinas. Sam Witwicky se ve arrastrado al conflicto mientras descubre que su primer auto es un Autobot encubierto.",
+      "genre": "Acción",
+      "year": 2007,
+      "image": null,
+      "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jNZOozjyWKC0jTTvpZ3KOobGcED.jpg"
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 5,
+    "fields": {
+      "title": "Cars",
+      "description": "Lightning McQueen, un joven auto de carreras, queda varado en un pueblo olvidado de la ruta. Allí aprende que ganar no lo es todo, descubre la amistad y el valor de las pequeñas comunidades.",
+      "genre": "Animación",
+      "year": 2006,
+      "image": null,
+      "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lgBe9KD6DoLyQP28JZ6fSUGK8j0.jpg"
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 6,
+    "fields": {
+      "title": "Ratatouille",
+      "description": "Remy es una rata con un gusto extraordinario por la cocina que vive en París. Forma una alianza improbable con un joven aprendiz de cocina para demostrar que cualquiera puede ser chef y que la pasión puede venir de donde menos lo esperas.",
+      "genre": "Familia",
+      "year": 2007,
+      "image": null,
+      "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nGUelOVetiRpY2wTBMHTbrTIGYC.jpg"
+    }
+  }
+]

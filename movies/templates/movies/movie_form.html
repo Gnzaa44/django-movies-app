@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Agregar / Editar Película{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-7">
+    <div class="card bg-dark text-light shadow-sm p-4 p-md-5">
+      <div class="text-center mb-5">
+        <h3 class="fw-bold" style="background: linear-gradient(135deg, #e50914, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2rem;">
+          {% if form.instance.pk %}✏️ Editar Película{% else %}➕ Nueva Película{% endif %}
+        </h3>
+        <p class="text-muted mb-0">Completa los campos para {% if form.instance.pk %}actualizar{% else %}agregar{% endif %} la película</p>
+      </div>
+      
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {% for field in form %}
+        <div class="mb-4">
+          <label for="{{ field.id_for_label }}" class="form-label">
+            {{ field.label }}
+          </label>
+          {{ field }}
+          {% if field.help_text %}
+          <small class="form-text">{{ field.help_text }}</small>
+          {% endif %}
+          {% if field.errors %}
+          <div class="alert alert-danger mt-2 p-2">
+            {{ field.errors }}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+        
+        <div class="d-grid gap-3 mt-5">
+          <button type="submit" class="btn btn-primary btn-lg">
+            {% if form.instance.pk %}💾 Actualizar Película{% else %}🎬 Guardar Película{% endif %}
+          </button>
+          <a href="{% url 'movie_list' %}" class="btn btn-secondary btn-lg">
+            ← Cancelar y volver
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
