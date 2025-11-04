@@ -1,24 +1,32 @@
-🎬 PyMovies - Catálogo de Películas con Django
+# 🎬 PyMovies - Catálogo de Películas con Django
 
-Autor: Gonzalo Seitz
-Tecnologías: Django · PostgreSQL · Bootstrap · CRUD · Fixtures
+**Autor:** Gonzalo Seitz  
+**Tecnologías:** Django · PostgreSQL · Bootstrap · CRUD · Fixtures
 
-Descripción del Proyecto
+---
 
-PyMovies es una aplicación web desarrollada con Django que permite gestionar un catálogo de películas.
+## 📖 Descripción del Proyecto
+
+PyMovies es una aplicación web desarrollada con Django que permite gestionar un catálogo de películas.  
 Incluye autenticación, vistas dinámicas, CRUD completo y carga de datos mediante fixtures o desde el panel de administración.
 
-Funcionalidades Principales
+---
 
-✔ Catálogo público de películas
-✔ Login y logout de usuarios
-✔ Panel para agregar, editar, eliminar películas (solo admin)
-✔ Postgres como base de datos
-✔ Carga inicial de datos con fixtures
-✔ Bootstrap y templates propios (base.html y extendidos)
-✔ Campos de imagen desde URL o archivo local (poster_url / image)
+## ⚡ Funcionalidades Principales
 
-Modelo de Datos (Movie)
+- Catálogo público de películas  
+- Login y logout de usuarios  
+- Panel para agregar, editar, eliminar películas (solo admin)  
+- PostgreSQL como base de datos  
+- Carga inicial de datos con fixtures  
+- Bootstrap y templates propios (base.html, login.html entre otros)  
+- Campos de imagen desde URL o archivo local (`poster_url` / `image`)  
+
+---
+
+## 🗂 Modelo de Datos (Movie)
+
+```python
 from django.db import models
 
 class Movie(models.Model):
@@ -32,22 +40,22 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
-Instalación y Ejecución en Local
+🛠 Instalación y Ejecución en Local
 1️⃣ Clonar el repositorio
 git clone https://github.com/Gnzaa44/django-movies-app.git
-cd PyMovies
+
 2️⃣ Crear y activar entorno virtual
 python -m venv .venv
-source .venv/bin/activate      # Linux/Mac
-.venv\Scripts\activate         # Windows
+# Linux/Mac
+source .venv/bin/activate
+# Windows
+.venv\Scripts\activate
 
 3️⃣ Instalar dependencias
 pip install -r requirements.txt
 
 4️⃣ Configurar el archivo .env
-
 El archivo .env debe contener algo como:
-
 SECRET_KEY=clave_secreta
 DEBUG=True
 DATABASE_URL=postgres://usuario:password@localhost:5432/py_movies_db
@@ -63,13 +71,10 @@ python manage.py createsuperuser
 
 8️⃣ Ejecutar servidor
 python manage.py runserver
-
-
 Acceder desde:
-🔹 http://127.0.0.1:8000/ → Catálogo
+http://127.0.0.1:8000/ → Catálogo
 
 📁 Datos cargados (fixtures)
-
 El proyecto incluye un fixture con 6 películas de ejemplo:
 
 Blade Runner 2049
@@ -87,8 +92,8 @@ Ratatouille
 Cada una con título, descripción, género, año y poster_url desde TMDb.
 
 📎 Notas Finales
+El campo poster_url permite mostrar imágenes sin guardar archivos en el servidor.
+El campo image existe en el modelo, donde se puede agregar una imagen desde la PC, pero no es necesario para producción.
+Proyecto desarrollado en entorno local con PostgreSQL + Django 5.
 
-✔ El campo poster_url permite mostrar imágenes sin guardar archivos en el servidor.
-✔ El campo image existe en el modelo, donde se puede agregar una imagen desde nuestra PC, pero no es necesario para producción.
-✔ Proyecto desarrollado en entorno local con PostgreSQL + Django 5.
-✔ Puede desplegarse en Render / Railway en el futuro sin grandes cambios.
+Puede desplegarse en Render / Railway en el futuro sin grandes cambios.
